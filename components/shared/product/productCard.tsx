@@ -1,21 +1,10 @@
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { Product } from "@/types";
 import Image from "next/image";
 import Link from "next/link";
 import ProductPrice from "./productPrice";
 
-interface ProductCardProps {
-  product: {
-    name: string;
-    slug: string;
-    price: number;
-    brand: string;
-    images: string[];
-    rating: number;
-    stock: number;
-  };
-}
-
-const ProductCard = ({ product }: ProductCardProps) => {
+const ProductCard = ({ product }: { product: Product }) => {
   return (
     <Card className="w-full max-w-sm ">
       <CardHeader className=" p-0 items-center">
