@@ -21,7 +21,7 @@ const Menu = () => {
           </Link>
         </Button>
         <Button asChild>
-          <Link href="/signin">
+          <Link href="/signIn">
             <UserIcon />
             Sign In
           </Link>
@@ -41,7 +41,7 @@ const Menu = () => {
               </Link>
             </Button>
             <Button asChild>
-              <Link href="/signin">
+              <Link href="/signIn">
                 <UserIcon />
                 Sign In
               </Link>
