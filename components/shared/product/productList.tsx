@@ -15,7 +15,7 @@ const ProductList = ({
 
   return (
     <div id="product-section" className="my-10">
-      <h2 className=" h2-bold mb-4">{title}</h2>
+      <h3 className=" h3-bold mb-4">{title}</h3>
       {data.length > 0 ? (
         <div className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {limitedData.map((product: Product) => (
