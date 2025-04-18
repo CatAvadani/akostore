@@ -2,6 +2,7 @@
 
 <div align="left" style="display: flex; align-items: flex-start;">
   <img src="public/images/akostore_img_1.png" alt="Home page" width="300" />
+    <img src="public/images/akostore_img_3.png" alt="Home page" width="300" />
   <img src="public/images/akostore_img_2.png" alt="Product details view" width="350" style="vertical-align: top;" />
 </div>
 
