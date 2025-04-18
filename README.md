@@ -22,6 +22,7 @@ Ako & Co is a fashion e-commerce website offering a curated selection of high-qu
 - Next.js 15 (App Router)
 - React 19
 - TypeScript
+- Shadcn/ui
 - Tailwind CSS
 
 
