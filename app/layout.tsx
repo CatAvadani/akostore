@@ -11,7 +11,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: {
     default: APP_NAME,
-    template: "%s | Ako Store",
+    template: "%s | Ako & Co",
   },
   description: APP_DESCRIPTION,
   metadataBase: new URL(SERVER_URL),
