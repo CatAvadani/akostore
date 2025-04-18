@@ -3,7 +3,6 @@ import {
   Sheet,
   SheetContent,
   SheetDescription,
-  SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { EllipsisVertical, ShoppingCart } from "lucide-react";
@@ -29,7 +28,7 @@ const Menu = () => {
             <EllipsisVertical />
           </SheetTrigger>
           <SheetContent className=" flex flex-col items-start">
-            <SheetTitle>Menu</SheetTitle>
+            {/* <SheetTitle>Menu</SheetTitle> */}
             <ModeToggle />
             <Button asChild variant="ghost">
               <Link href="/cart">

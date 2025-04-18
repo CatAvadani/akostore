@@ -23,8 +23,8 @@ const ProductImages = ({ images }: { images: string[] }) => {
             key={image}
             onClick={() => setCurrent(index)}
             className={cn(
-              "cursor-pointer border mr-2 hover:border-orange-600",
-              current === index && "border-orange-500"
+              "cursor-pointer border mr-2 hover:border-black/30 transition-all duration-200",
+              current === index && "border-gray-700"
             )}
           >
             <Image src={image} alt="image" width={100} height={100} />
