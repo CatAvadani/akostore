@@ -1,11 +1,11 @@
 ## Ako & Co E-commerce
 
-<div align="left">
-  <img src="public/akostore_img_1.png" alt="Home page" width="200" height="220"/>
-  <img src="public/akostore_img_2.png" alt="Product details view" width="200" height="220"/>
+<div align="left" style="display: flex; align-items: flex-start;">
+  <img src="public/images/akostore_img_1.png" alt="Home page" width="450" />
+  <img src="public/images/akostore_img_2.png" alt="Product details view" width="550" style="vertical-align: top;" />
 </div>
 
- 
+
 A modern, full-stack e-commerce platform built with Next.js 15, React 19, TypeScript, PostgreSQL, and Prisma.
 
 Note: This project is currently under active development and is not yet complete. Features and documentation will be updated as development progresses.
