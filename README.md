@@ -18,24 +18,24 @@ Ako & Co is a fashion e-commerce website offering a curated selection of high-qu
 
 ### Frontend:
 
-Next.js 15 (App Router)
-React 19
-TypeScript
-Tailwind CSS
+- Next.js 15 (App Router)
+- React 19
+- TypeScript
+- Tailwind CSS
 
 
 ### Backend:
 
-Next.js API Routes
-PostgreSQL
-Prisma ORM
+- Next.js API Routes
+- PostgreSQL
+- Prisma ORM
 
 
 ### Authentication:
 
-NextAuth.js
+- NextAuth.js
 
 
 ### Payment Processing:
 
-Stripe API
+- Stripe API
