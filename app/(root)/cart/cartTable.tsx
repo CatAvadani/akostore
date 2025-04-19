@@ -13,13 +13,12 @@ import { Cart } from "@/types";
 import { Loader, Minus, Plus } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { startTransition, useTransition } from "react";
+import { useTransition } from "react";
 import { toast } from "sonner";
 
 const CartTable = ({ cart }: { cart?: Cart }) => {
-  const router = useRouter();
-  const [isPending, setTransition] = useTransition();
+  // const router = useRouter();
+  const [isPending, startTransition] = useTransition();
 
   return (
     <>
