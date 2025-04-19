@@ -55,7 +55,7 @@ export const cartItemSchema = z.object({
 });
 
 // Cart schema
-export const insertItemSchema = z.object({
+export const insertCartSchema = z.object({
   items: z.array(cartItemSchema),
   itemsPrice: currency,
   totalPrice: currency,

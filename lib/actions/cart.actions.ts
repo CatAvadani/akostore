@@ -4,8 +4,29 @@ import { auth } from "@/auth";
 import { prisma } from "@/db/prisma";
 import { CartItem } from "@/types";
 import { cookies } from "next/headers";
-import { convertToPlainObject, formatError } from "../utils";
-import { cartItemSchema } from "../validators";
+import {
+  convertToPlainObject,
+  formatError,
+  roundToTwoDecimalPlaces,
+} from "../utils";
+import { cartItemSchema, insertCartSchema } from "../validators";
+
+// Calculate cart prices
+const calcPrice = (items: CartItem[]) => {
+  const itemsPrice = roundToTwoDecimalPlaces(
+      items.reduce((acc, item) => acc + Number(item.price) * item.qty, 0)
+    ),
+    shippingPrice = roundToTwoDecimalPlaces(itemsPrice > 800 ? 0 : 100),
+    taxPrice = roundToTwoDecimalPlaces(itemsPrice * 0.15),
+    totalPrice = roundToTwoDecimalPlaces(itemsPrice + shippingPrice + taxPrice);
+
+  return {
+    itemsPrice: itemsPrice.toFixed(2),
+    shippingPrice: shippingPrice.toFixed(2),
+    taxPrice: taxPrice.toFixed(2),
+    totalPrice: totalPrice.toFixed(2),
+  };
+};
 
 export async function addItemToCart(data: CartItem) {
   try {
@@ -18,7 +39,7 @@ export async function addItemToCart(data: CartItem) {
     const session = await auth();
     const userId = session?.user?.id ? (session.user.id as string) : undefined;
 
-    // const cart = await getMyCart();
+    const cart = await getMyCart();
 
     // Parse and validate item
     const item = cartItemSchema.parse(data);
@@ -30,13 +51,22 @@ export async function addItemToCart(data: CartItem) {
       },
     });
 
-    // Testing
-    console.log({
-      "Session Cart ID": sessionCartId,
-      "User Id": userId,
-      "Item requested": item,
-      "Product found": product,
-    });
+    // If the product is not found, throw an error
+    if (!product) throw new Error("Product not found");
+
+    // Check if the item already exists in the cart
+    if (!cart) {
+      // Create a new cart if it doesn't exist}
+      const newCart = insertCartSchema.parse({
+        userId: userId,
+        items: [item],
+        sessionCartId: sessionCartId,
+        ...calcPrice([item]),
+      });
+
+      console.log("New cart", newCart);
+    }
+
     return {
       success: true,
       message: "Item added to cart",
