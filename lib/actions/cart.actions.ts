@@ -80,7 +80,7 @@ export async function addItemToCart(data: CartItem) {
       );
 
       if (existItem) {
-        // Check stock
+        // Check stock first
         if (product.stock < existItem.qty + 1) {
           throw new Error("Not enough stock");
         }
