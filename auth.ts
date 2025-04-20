@@ -2,6 +2,7 @@ import { PrismaAdapter } from "@auth/prisma-adapter";
 import { compareSync } from "bcrypt-ts-edge";
 import NextAuth from "next-auth";
 import CredentialProvider from "next-auth/providers/credentials";
+import { cookies } from "next/headers";
 import { authConfig } from "./auth.config";
 import { prisma } from "./db/prisma";
 
@@ -69,6 +70,7 @@ export const config = {
     async jwt({ token, user, trigger, session }: any) {
       // Assign user fields to the token
       if (user) {
+        token.id = user.id;
         token.role = user.role;
 
         // If the user has no name, set it to the email
@@ -85,6 +87,31 @@ export const config = {
               name: token.name,
             },
           });
+        }
+        if (trigger === "signIn" || trigger === "signUp") {
+          const cookiesObject = await cookies();
+          const sessionCartId = cookiesObject.get("sessionCartId")?.value;
+
+          if (sessionCartId) {
+            const sessionCart = await prisma.cart.findFirst({
+              where: { sessionCartId },
+            });
+
+            if (sessionCart) {
+              // Delete current user cart
+              await prisma.cart.deleteMany({
+                where: { userId: user.id },
+              });
+
+              // Assign new cart to the user
+              await prisma.cart.update({
+                where: { id: sessionCart.id },
+                data: {
+                  userId: user.id,
+                },
+              });
+            }
+          }
         }
       }
 
