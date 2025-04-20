@@ -43,20 +43,28 @@ const HeroSection = () => {
         <div className="flex">
           <div className="h-[500px] w-[50%]">
             <Image
-              src={"/images/fashion_img_2.jpg"}
-              alt="hero image"
-              width={500}
-              height={500}
+              src="/images/fashion_img_2.jpg"
+              alt="Fashion model in spring outfit"
+              width={800}
+              height={1200}
+              priority={true}
+              quality={80}
               className="w-full h-full object-cover"
+              loading="eager"
+              sizes="50vw"
             />
           </div>
           <div className="h-[500px] w-[50%]">
             <Image
-              src={"/images/fashion_img_1.png"}
-              alt="hero image"
-              width={500}
-              height={500}
+              src="/images/fashion_img_1.png"
+              alt="Spring fashion collection item"
+              width={800}
+              height={1200}
+              priority={true}
+              quality={80}
               className="w-full h-full object-cover"
+              loading="eager"
+              sizes="50vw"
             />
           </div>
         </div>
