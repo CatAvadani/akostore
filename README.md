@@ -6,7 +6,6 @@
   <img src="public/images/akostore_img_2.png" alt="Product details view" width="350" style="vertical-align: top;" />
 </div>
 
-
 A modern, full-stack e-commerce platform built with Next.js 15, React 19, TypeScript, PostgreSQL, and Prisma.
 
 Note: This project is currently under active development and is not yet complete. Features and documentation will be updated as development progresses.
@@ -19,12 +18,11 @@ Ako & Co is a fashion e-commerce website offering a curated selection of high-qu
 
 ### Frontend:
 
-- Next.js 15 (App Router)
+- Next.js 15
 - React 19
 - TypeScript
 - Shadcn/ui
 - Tailwind CSS
-
 
 ### Backend:
 
@@ -32,11 +30,9 @@ Ako & Co is a fashion e-commerce website offering a curated selection of high-qu
 - PostgreSQL
 - Prisma ORM
 
-
 ### Authentication:
 
 - NextAuth.js
-
 
 ### Payment Processing:
 
