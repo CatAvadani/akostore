@@ -51,11 +51,11 @@ const CartTable = ({ cart }: { cart?: Cart }) => {
                       >
                         <Image
                           src={item.image}
-                          alt={item.productName}
+                          alt="product image"
                           width={50}
                           height={50}
                         />
-                        <span className="px-2">{item.productName}</span>
+                        <span className="px-2">{item.name}</span>
                       </Link>
                     </TableCell>
                     <TableCell className=" flex-center gap-2">
