@@ -70,7 +70,7 @@ const ProductDetails = async (props: { params: Promise<{ slug: string }> }) => {
                       cart={cart}
                       item={{
                         productId: product.id,
-                        productName: product.name,
+                        name: product.name,
                         slug: product.slug,
                         price: product.price,
                         image: product.images![0],
