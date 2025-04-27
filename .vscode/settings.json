@@ -1,3 +1,9 @@
 {
-  "cSpell.words": ["orderitems", "Updateitems"]
+  "cSpell.words": ["orderitems", "Updateitems"],
+  "github.copilot.enable": {
+    "*": false,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false
+  }
 }
