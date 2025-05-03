@@ -1,9 +1,10 @@
 import Menu from "@/components/shared/header/menu";
+import { Input } from "@/components/ui/input";
 import { APP_NAME } from "@/lib/constants";
 import Link from "next/link";
 import MainNav from "./mainNav";
 
-export default function UserLayout({
+export default function AdminLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -19,6 +20,13 @@ export default function UserLayout({
             {/* Main nav */}
             <MainNav className="mx-6" />
             <div className="ml-auto items-center flex space-x-4">
+              <div>
+                <Input
+                  type="search"
+                  placeholder="Search..."
+                  className=" md:w-[100px] lg:w-[300px]"
+                />
+              </div>
               <Menu />
             </div>
           </div>
