@@ -294,7 +294,7 @@ type SalesDataType = {
 
 // Get sales data and order summary
 export async function getOrderSummary() {
-  // Get count for each resource
+  // Get counts for each resource
   const ordersCount = await prisma.order.count();
   const productsCount = await prisma.product.count();
   const usersCount = await prisma.user.count();
@@ -303,12 +303,13 @@ export async function getOrderSummary() {
   const totalSales = await prisma.order.aggregate({
     _sum: { totalPrice: true },
   });
-  // Get monthly sales
-  const salesDateRow = await prisma.$queryRaw<
-    Array<{ month: string; totalSales: Prisma.Decimal }>
-  >`SELECT to_char('createdAt', 'MM/Y') as "month", sum("totalPrice") as "totalSales" FROM "Order" GROUP BY to_char("createdAt", 'MM/YY')`;
 
-  const salesData: SalesDataType = salesDateRow.map((entry) => ({
+  // Get monthly sales
+  const salesDataRaw = await prisma.$queryRaw<
+    Array<{ month: string; totalSales: Prisma.Decimal }>
+  >`SELECT to_char("createdAt", 'MM/YY') as "month", sum("totalPrice") as "totalSales" FROM "Order" GROUP BY to_char("createdAt", 'MM/YY')`;
+
+  const salesData: SalesDataType = salesDataRaw.map((entry) => ({
     month: entry.month,
     totalSales: Number(entry.totalSales),
   }));
@@ -316,7 +317,9 @@ export async function getOrderSummary() {
   // Get latest sales
   const latestSales = await prisma.order.findMany({
     orderBy: { createdAt: "desc" },
-    include: { user: { select: { name: true } } },
+    include: {
+      user: { select: { name: true } },
+    },
     take: 6,
   });
 
