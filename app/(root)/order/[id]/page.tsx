@@ -1,3 +1,4 @@
+import { auth } from "@/auth";
 import { getOrderById } from "@/lib/actions/order.actions";
 import { ShippingAddress } from "@/types";
 import { Metadata } from "next";
@@ -9,6 +10,7 @@ export const metadata: Metadata = {
 };
 const OrderDetails = async (props: { params: Promise<{ id: string }> }) => {
   const { id } = await props.params;
+  const session = await auth();
 
   const order = await getOrderById(id);
   if (!order) notFound();
@@ -20,6 +22,7 @@ const OrderDetails = async (props: { params: Promise<{ id: string }> }) => {
         shippingAddress: order.shippingAddress as ShippingAddress,
       }}
       paypalClientId={process.env.PAYPAL_CLIENT_ID || "sb"}
+      isAdmin={session?.user.role === "admin" || false}
     />
   );
 };

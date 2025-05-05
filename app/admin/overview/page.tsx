@@ -1,4 +1,3 @@
-import { auth } from "@/auth";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   Table,
@@ -9,6 +8,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { getOrderSummary } from "@/lib/actions/order.actions";
+import { requireAdmin } from "@/lib/admin-guard";
 import { formatCurrency, formatDateTime, formatNumber } from "@/lib/utils";
 import { BadgeDollarSign, Barcode, CreditCard, Users } from "lucide-react";
 import { Metadata } from "next";
@@ -19,18 +19,16 @@ export const metadata: Metadata = {
   title: "Admin Dashboard",
 };
 const AdminOverviewPage = async () => {
-  const session = await auth();
-
-  if (session?.user.role !== "admin") throw new Error("User is not authorized");
+  await requireAdmin();
 
   const summary = await getOrderSummary();
 
   return (
-    <div className=" space-y-2">
+    <div className=" space-y-4">
       <h1 className="h3-bold">Dashboard</h1>
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-        <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+        <Card className=" bg-rose-100 h-30 rounded-lg">
+          <CardHeader className="flex flex-row items-center justify-between space-y-0">
             <CardTitle className="text-sm font-medium">Total Revenue</CardTitle>
             <BadgeDollarSign />
           </CardHeader>
@@ -42,8 +40,8 @@ const AdminOverviewPage = async () => {
             </div>
           </CardContent>
         </Card>
-        <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+        <Card className="bg-cyan-50 h-30 rounded-lg">
+          <CardHeader className="flex flex-row items-center justify-between space-y-0">
             <CardTitle className="text-sm font-medium">Sales</CardTitle>
             <CreditCard />
           </CardHeader>
@@ -53,8 +51,8 @@ const AdminOverviewPage = async () => {
             </div>
           </CardContent>
         </Card>
-        <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+        <Card className=" bg-blue-50 h-30 rounded-lg">
+          <CardHeader className="flex flex-row items-center justify-between space-y-0">
             <CardTitle className="text-sm font-medium">Customers</CardTitle>
             <Users />
           </CardHeader>
@@ -64,8 +62,8 @@ const AdminOverviewPage = async () => {
             </div>
           </CardContent>
         </Card>
-        <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+        <Card className=" bg-purple-100 h-30 rounded-lg">
+          <CardHeader className="flex flex-row items-center justify-between space-y-0">
             <CardTitle className="text-sm font-medium">Products</CardTitle>
             <Barcode />
           </CardHeader>
@@ -77,7 +75,7 @@ const AdminOverviewPage = async () => {
         </Card>
       </div>
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-7">
-        <Card className=" col-span-4">
+        <Card className=" col-span-4 rounded-lg">
           <CardHeader>
             <CardTitle>Overview</CardTitle>
           </CardHeader>
@@ -89,7 +87,7 @@ const AdminOverviewPage = async () => {
             />
           </CardContent>
         </Card>
-        <Card className=" col-span-3">
+        <Card className=" col-span-3 rounded-lg">
           <CardHeader>
             <CardTitle>Recent Sales</CardTitle>
           </CardHeader>
