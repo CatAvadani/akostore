@@ -65,4 +65,11 @@ Personalized user area featuring order history listing and profile management ca
 Comprehensive admin control panel with:
 * Overview analytics page
 * Order management system
-* More admin features in development 
+* More admin features in development
+
+  
+## Acknowledgments
+
+This project is being built following 
+**Next.js Ecommerce 2025 - Shopping Platform From Scratch**
+on Udemy, by Brad Traversy, with my own customizations and extensions as I learn.
