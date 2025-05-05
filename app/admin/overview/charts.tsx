@@ -27,7 +27,7 @@ const Charts = ({
           dataKey="totalSales"
           fill="currentColor"
           radius={[4, 4, 0, 0]}
-          className="fill-primary"
+          className=" fill-violet-900"
         />
       </BarChart>
     </ResponsiveContainer>
