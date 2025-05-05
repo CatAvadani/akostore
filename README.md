@@ -40,3 +40,29 @@ Ako & Co is a fashion e-commerce website offering a curated selection of high-qu
 ### Payment Processing:
 
 - Stripe API
+
+## Key Features
+
+### Authentication With Next Auth
+A complete authentication system built with Next Auth library providing secure user registration, login, and session management.
+
+### Add To Cart
+Robust cart system with database and session integration allowing users to add products, update quantities, and persist carts across sessions.
+
+### Cart & Shipping Page
+Streamlined checkout process beginning with a comprehensive cart summary page and user-friendly shipping address form.
+
+### Payment Method & Order Pages
+Complete checkout flow with payment method selection and detailed order confirmation pages.
+
+### PayPal Payments
+Fully integrated PayPal API for secure payment processing with unit testing using JEST to ensure reliability.
+
+### Order History & User Profile
+Personalized user area featuring order history listing and profile management capabilities.
+
+### Admin Dashboard
+Comprehensive admin control panel with:
+* Overview analytics page
+* Order management system
+* More admin features in development 
