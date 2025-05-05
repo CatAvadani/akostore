@@ -2,8 +2,11 @@
 
 <div align="left" style="display: flex; align-items: flex-start;">
   <img src="public/images/akostore_img_1.png" alt="Home page" width="300" />
-    <img src="public/images/akostore_img_3.png" alt="Home page" width="300" />
+   
   <img src="public/images/akostore_img_2.png" alt="Product details view" width="350" style="vertical-align: top;" />
+   <img src="public/images/order_img_3.png" alt="Home page" width="300" />
+   <img src="public/images/chart_img_3.png" alt="Home page" width="300" />
+
 </div>
 
 A modern, full-stack e-commerce platform built with Next.js 15, React 19, TypeScript, PostgreSQL, and Prisma.
