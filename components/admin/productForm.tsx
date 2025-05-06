@@ -1,12 +1,14 @@
 "use client";
 
+import { createProduct, updateProduct } from "@/lib/actions/product.actions";
 import { productDefaultValues } from "@/lib/constants";
 import { insertProductSchema, updateProductSchema } from "@/lib/validators";
 import { Product } from "@/types";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/navigation";
-import { useForm } from "react-hook-form";
+import { SubmitHandler, useForm } from "react-hook-form";
 import slugify from "slugify";
+import { toast } from "sonner";
 import { z } from "zod";
 import { Button } from "../ui/button";
 import {
@@ -38,9 +40,45 @@ const ProductForm = ({
     defaultValues:
       product && type === "Update" ? product : productDefaultValues,
   });
+
+  const onSubmit: SubmitHandler<z.infer<typeof insertProductSchema>> = async (
+    values
+  ) => {
+    // On create
+    if (type === "Create") {
+      const res = await createProduct(values);
+      if (!res.success) {
+        toast.error(res.message);
+      } else {
+        toast.success(res.message);
+        router.push("/admin/products");
+      }
+    }
+
+    // On update
+
+    if (type === "Update") {
+      if (!productId) {
+        router.push("/admin/products");
+      }
+
+      if (!productId) {
+        throw new Error("Product ID is required for updating a product.");
+      }
+
+      const res = await updateProduct({ ...values, id: productId });
+
+      if (!res.success) {
+        toast.error(res.message);
+      } else {
+        toast.success(res.message);
+        router.push("/admin/products");
+      }
+    }
+  };
   return (
     <Form {...form}>
-      <form className="space-y-8">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
         <div className="flex flex-col gap-5 md:flex-row items-start">
           {/* Name */}
           <FormField
