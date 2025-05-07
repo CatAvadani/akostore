@@ -23,12 +23,7 @@ const Charts = ({
           axisLine={false}
           tickFormatter={(value) => `${value}Kr`}
         />
-        <Bar
-          dataKey="totalSales"
-          fill="currentColor"
-          radius={[4, 4, 0, 0]}
-          className=" fill-violet-900"
-        />
+        <Bar dataKey="totalSales" fill="currentColor" radius={[4, 4, 0, 0]} />
       </BarChart>
     </ResponsiveContainer>
   );
