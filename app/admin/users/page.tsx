@@ -8,10 +8,11 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { getAllUsers } from "@/lib/actions/user.actions";
+import { deleteUser, getAllUsers } from "@/lib/actions/user.actions";
 import { formatId } from "@/lib/utils";
 import Link from "next/link";
 
+import DeleteDialog from "@/components/shared/deleteDialog";
 import { Badge } from "@/components/ui/badge";
 import { Metadata } from "next";
 
@@ -60,7 +61,7 @@ const AdminUsersPage = async (props: {
                     <Link href={`admin/users/${user.id}`}>Edit</Link>
                   </Button>
                   {/* DELETE BUTTON */}
-                  {/* <DeleteDialog id={user.id} action={deleteUser} /> */}
+                  <DeleteDialog id={user.id} action={deleteUser} />
                 </TableCell>
               </TableRow>
             ))}
