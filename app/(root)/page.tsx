@@ -1,5 +1,6 @@
 import HeroSection from "@/components/heroSection";
 import ProductList from "@/components/shared/product/productList";
+import ViewAllProductsButton from "@/components/viewAllProductsButton";
 import {
   // getFeaturedProducts,
   getLatestProducts,
@@ -17,6 +18,7 @@ const HomePage = async () => {
       <HeroSection />
 
       <ProductList data={latestProducts} title="Newest Arrivals" limit={4} />
+      <ViewAllProductsButton />
     </div>
   );
 };
