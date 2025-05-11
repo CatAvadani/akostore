@@ -2,6 +2,7 @@ import { APP_NAME } from "@/lib/constants";
 import Link from "next/link";
 import CategoryDrawer from "./categoryDrawer";
 import Menu from "./menu";
+import Search from "./search";
 
 const Header = () => {
   return (
@@ -23,6 +24,9 @@ const Header = () => {
               Kids
             </Link>
           </ul>
+        </div>
+        <div className="hidden md:block">
+          <Search />
         </div>
         <Menu />
       </div>
