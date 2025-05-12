@@ -205,7 +205,7 @@ const SearchPage = async (props: {
         <div className="flex-between flex-col md:flex-row my-4">
           <div className="flex items-center">
             {q !== "all" && q != "" && "Query:" + q}
-            {category !== "all" && category != "" && "Category:" + category}
+            {category !== "all" && category != "" && "Category: " + category}
             {price !== "all" && " Price: " + price}
             {rating !== "all" && " Rating: " + rating + " stars & up"}
             &nbsp;
@@ -213,8 +213,12 @@ const SearchPage = async (props: {
             (category != "all" && category != "") ||
             price != "all" ||
             rating != "all" ? (
-              <Button variant="link" asChild>
-                <Link href="/search">Clear</Link>
+              <Button
+                variant="link"
+                className=" rounded-full bg-gray-100 ml-4"
+                asChild
+              >
+                <Link href="/search">Clear Filters</Link>
               </Button>
             ) : null}
           </div>
