@@ -15,15 +15,16 @@ const HeroSection = () => {
       {/* Promotional Banner */}
       <div className="w-full bg-black text-white py-3 px-4 text-center">
         <p className="text-sm md:text-base font-medium">
-          FREE SHIPPING ON ORDERS OVER 800 KR • SPRING COLLECTION NOW AVAILABLE
+          {/* FREE SHIPPING ON ORDERS OVER 800 KR • SPRING COLLECTION NOW AVAILABLE */}
+          Free shipping on orders over 800 Kr • Spring Collection now available
         </p>
       </div>
 
       {/* Hero Caption Overlay */}
       <div className="relative">
-        <div className="absolute inset-0 flex items-center justify-center z-10">
-          <div className="text-center bg-white/40 backdrop-blur-2xl px-8 py-6  max-w-md">
-            <h1 className="text-3xl md:text-4xl font-bold mb-2">
+        <div className="absolute inset-0 flex items-center justify-center z-10 text-white">
+          <div className="text-center bg-white/10 backdrop-blur-md px-36 py-6  max-w-5xl rounded-2xl">
+            <h1 className="text-3xl md:text-4xl font-extrabold mb-2 uppercase ">
               Spring Collection
             </h1>
             <p className="text-lg mb-4">
@@ -32,7 +33,7 @@ const HeroSection = () => {
             <Button
               onClick={scrollToProducts}
               variant="default"
-              className="px-6 py-2 rounded-none cursor-pointer"
+              className="px-6 py-2 cursor-pointer"
             >
               Shop Now
             </Button>
