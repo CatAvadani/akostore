@@ -3,6 +3,7 @@
 import { Review } from "@prisma/client";
 import Link from "next/link";
 import { useState } from "react";
+import ReviewForm from "./reviewForm";
 
 const ReviewList = ({
   userId,
@@ -19,7 +20,7 @@ const ReviewList = ({
     <div className=" space-y-4">
       {reviews.length === 0 && <div>No review yet</div>}
       {userId ? (
-        <>{/* Review Form Here */}</>
+        <ReviewForm userId={userId} productId={productId} />
       ) : (
         <div>
           Please
