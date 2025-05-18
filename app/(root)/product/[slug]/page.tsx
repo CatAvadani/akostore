@@ -2,6 +2,7 @@ import { auth } from "@/auth";
 import AddToCart from "@/components/shared/product/addToCart";
 import ProductImages from "@/components/shared/product/productImages";
 import ProductPrice from "@/components/shared/product/productPrice";
+import Rating from "@/components/shared/product/rating";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { getMyCart } from "@/lib/actions/cart.actions";
@@ -36,9 +37,8 @@ const ProductDetails = async (props: { params: Promise<{ slug: string }> }) => {
                 {product.brand} {product.category}
               </p>
               <h1 className="h3-bold">{product.name}</h1>
-              <p>
-                {product.rating} {product.numReviews} Reviews
-              </p>
+              <Rating value={Number(product.rating)} />
+              <p>{product.numReviews} Reviews</p>
               <div className="flex flex-col sm:flex-row sm:items-center">
                 <ProductPrice
                   value={Number(product.price)}
