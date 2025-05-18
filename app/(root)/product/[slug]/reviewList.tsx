@@ -30,14 +30,18 @@ const ReviewList = ({
   useEffect(() => {
     const loadReviews = async () => {
       const res = await getReviews({ productId });
+
       setReviews(res.data);
     };
 
     loadReviews();
   }, [productId]);
 
-  const reload = () => {
-    console.log("Review Submitted");
+  // Reload reviews after creating or updating a review
+  const reload = async () => {
+    const res = await getReviews({ productId });
+
+    setReviews([...res.data]);
   };
 
   return (
