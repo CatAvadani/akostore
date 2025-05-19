@@ -39,7 +39,8 @@ Ako & Co is a fashion e-commerce website offering a curated selection of high-qu
 
 ### Payment Processing:
 
-- Stripe API
+- PayPall
+- Stripe 
 
 ## Uploading images
 
