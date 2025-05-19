@@ -15,8 +15,7 @@ import {
   Tailwind,
   Text,
 } from "@react-email/components";
-import dotenv from "dotenv";
-dotenv.config();
+import "dotenv/config";
 
 PurchaseReceiptEmail.PreviewProps = {
   order: {
@@ -29,16 +28,16 @@ PurchaseReceiptEmail.PreviewProps = {
     paymentMethod: "Stripe",
     shippingAddress: {
       fullName: "John Doe",
-      streetAddress: " Main Street 14C",
-      city: "Gothenburg",
-      postalCode: "123334",
-      country: "Sweden",
+      streetAddress: "123 Main st",
+      city: "New York",
+      postalCode: "10001",
+      country: "US",
     },
     createdAt: new Date(),
-    totalPrice: "1000",
-    taxPrice: "100",
-    shippingPrice: "100",
-    itemsPrice: "800",
+    totalPrice: "100",
+    taxPrice: "10",
+    shippingPrice: "10",
+    itemsPrice: "80",
     orderitems: sampleData.products.map((x) => ({
       name: x.name,
       orderId: "123",
@@ -73,8 +72,8 @@ export default function PurchaseReceiptEmail({ order }: OrderInformationProps) {
       <Preview>View order receipt</Preview>
       <Tailwind>
         <Head />
-        <Body className=" font-sans bg-white">
-          <Container className=" max-w-xl">
+        <Body className="font-sans bg-white">
+          <Container className="max-w-xl">
             <Heading>Purchase Receipt</Heading>
             <Section>
               <Row>
@@ -102,12 +101,12 @@ export default function PurchaseReceiptEmail({ order }: OrderInformationProps) {
                 </Column>
               </Row>
             </Section>
-            <Section className=" border border-solid border-gray-500 rounded-lg p-4 md:p-6 my-4">
+            <Section className="border border-solid border-gray-500 rounded-lg p-4 md:p-6 my-4">
               {order.orderitems.map((item) => (
-                <Row key={item.productId} className=" mt-8">
-                  <Column className=" w-20">
+                <Row key={item.productId} className="mt-8">
+                  <Column className="w-20">
                     <Img
-                      width={"80"}
+                      width="80"
                       alt={item.name}
                       className="rounded"
                       src={
@@ -117,7 +116,7 @@ export default function PurchaseReceiptEmail({ order }: OrderInformationProps) {
                       }
                     />
                   </Column>
-                  <Column className=" align-top">
+                  <Column className="align-top">
                     {item.name} x {item.qty}
                   </Column>
                   <Column align="right" className="align-top">
@@ -131,10 +130,10 @@ export default function PurchaseReceiptEmail({ order }: OrderInformationProps) {
                 { name: "Shipping", price: order.shippingPrice },
                 { name: "Total", price: order.totalPrice },
               ].map(({ name, price }) => (
-                <Row key={name} className=" py-1">
+                <Row key={name} className="py-1">
                   <Column align="right">{name}: </Column>
                   <Column align="right" width={70} className="align-top">
-                    <Text className=" m-0">{formatCurrency(price)}</Text>
+                    <Text className="m-0">{formatCurrency(price)}</Text>
                   </Column>
                 </Row>
               ))}
