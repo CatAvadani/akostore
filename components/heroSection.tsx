@@ -15,7 +15,6 @@ const HeroSection = () => {
       {/* Promotional Banner */}
       <div className="w-full bg-black text-white py-3 px-4 text-center">
         <p className="text-sm md:text-base font-medium">
-          {/* FREE SHIPPING ON ORDERS OVER 800 KR • SPRING COLLECTION NOW AVAILABLE */}
           Free shipping on orders over 800 Kr • Spring Collection now available
         </p>
       </div>
@@ -47,7 +46,7 @@ const HeroSection = () => {
               src="/images/fashion_img_2.jpg"
               alt="Fashion model in spring outfit"
               width={800}
-              height={1200}
+              height={600}
               priority={true}
               quality={80}
               className="w-full h-full object-cover"
@@ -60,7 +59,7 @@ const HeroSection = () => {
               src="/images/fashion_img_1.png"
               alt="Spring fashion collection item"
               width={800}
-              height={1200}
+              height={600}
               priority={true}
               quality={80}
               className="w-full h-full object-cover"

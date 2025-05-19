@@ -13,17 +13,6 @@ const Header = () => {
           <Link href="/" className=" flex-start ml-2">
             <h1 className=" lg:block font-bold text-2xl ml-3">{APP_NAME}</h1>
           </Link>
-          <ul className="hidden md:flex gap-6 ml-10">
-            <Link href="/" className=" hover:text-gray-500">
-              Men
-            </Link>
-            <Link href="/" className="hover:text-gray-500">
-              Women
-            </Link>
-            <Link href="/" className="hover:text-gray-500">
-              Kids
-            </Link>
-          </ul>
         </div>
         <div className="hidden md:block">
           <Search />
