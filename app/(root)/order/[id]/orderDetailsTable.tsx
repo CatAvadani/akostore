@@ -253,7 +253,7 @@ const OrderDetailsTable = ({
                 <StripePayment
                   priceInÖre={Number(totalPrice) * 100}
                   orderId={order.id}
-                  client_secret={stripeClientSecret}
+                  clientSecret={stripeClientSecret}
                 />
               )}
 
