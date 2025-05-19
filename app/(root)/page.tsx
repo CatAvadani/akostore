@@ -1,4 +1,6 @@
 import HeroSection from "@/components/heroSection";
+import DealCountdown from "@/components/shared/dealCountdown";
+import IconBoxes from "@/components/shared/iconBoxes";
 import ProductList from "@/components/shared/product/productList";
 import ViewAllProductsButton from "@/components/viewAllProductsButton";
 import {
@@ -19,6 +21,8 @@ const HomePage = async () => {
 
       <ProductList data={latestProducts} title="Newest Arrivals" limit={4} />
       <ViewAllProductsButton />
+      <DealCountdown />
+      <IconBoxes />
     </div>
   );
 };
