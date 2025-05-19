@@ -80,4 +80,7 @@ Comprehensive admin control panel with:
 - Order management system
 - More admin features in development
 
+### Email Purchase Receipts 
+-  Use the Resend service for sending email purchase receipts.
+
 ### Sorting, Filtering & Pagination
