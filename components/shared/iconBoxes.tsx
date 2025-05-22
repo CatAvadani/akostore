@@ -4,7 +4,7 @@ import { Card, CardContent } from "../ui/card";
 const IconBoxes = () => {
   return (
     <div>
-      <Card>
+      <Card className=" border-0">
         <CardContent className="grid md:grid-cols-4 gap-4 px-4">
           <div className="space-y-2">
             <ShoppingBag />
