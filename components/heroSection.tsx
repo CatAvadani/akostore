@@ -12,27 +12,25 @@ const HeroSection = () => {
 
   return (
     <div className="flex flex-col w-full">
-      {/* Promotional Banner */}
-      <div className="w-full bg-black text-white py-3 px-4 text-center">
-        <p className="text-sm md:text-base font-medium">
+      <div className="w-full bg-black text-white py-2 sm:py-3 px-4 text-center">
+        <p className="text-xs sm:text-sm md:text-base font-medium">
           Free shipping on orders over 800 Kr • Spring Collection now available
         </p>
       </div>
 
-      {/* Hero Caption Overlay */}
       <div className="relative">
-        <div className="absolute inset-0 flex items-center justify-center z-10 text-white">
-          <div className="text-center bg-white/10 backdrop-blur-md px-36 py-6  max-w-5xl rounded-2xl">
-            <h1 className="text-3xl md:text-4xl font-extrabold mb-2 uppercase ">
+        <div className="absolute inset-0 flex items-center justify-center z-10 text-white p-4">
+          <div className="text-center bg-white/10 backdrop-blur-md px-4 sm:px-6 md:px-10 lg:px-36 py-4 sm:py-6 max-w-xs sm:max-w-md md:max-w-3xl lg:max-w-5xl rounded-xl md:rounded-2xl">
+            <h1 className="text-lg sm:text-xl md:text-3xl lg:text-4xl font-extrabold mb-1 sm:mb-2 uppercase leading-tight">
               Spring Collection
             </h1>
-            <p className="text-lg mb-4">
+            <p className="text-sm sm:text-base md:text-lg mb-3 sm:mb-4">
               Discover the season&#39;s newest trends
             </p>
             <Button
               onClick={scrollToProducts}
               variant="default"
-              className="px-6 py-2 cursor-pointer"
+              className="px-4 sm:px-6 py-2 cursor-pointer text-sm sm:text-base"
             >
               Shop Now
             </Button>
@@ -41,30 +39,29 @@ const HeroSection = () => {
 
         {/* Image Section */}
         <div className="flex">
-          <div className="h-[500px] w-[50%]">
+          {/* Left Image */}
+          <div className="relative h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] w-1/2">
             <Image
               src="/images/fashion_img_2.jpg"
               alt="Fashion model in spring outfit"
-              width={800}
-              height={600}
+              fill
               priority={true}
-              quality={80}
-              className="w-full h-full object-cover"
-              loading="eager"
-              sizes="50vw"
+              quality={85}
+              className="object-cover"
+              sizes="(max-width: 640px) 50vw, (max-width: 768px) 50vw, (max-width: 1024px) 50vw, 50vw"
             />
           </div>
-          <div className="h-[500px] w-[50%]">
+
+          {/* Right Image */}
+          <div className="relative h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] w-1/2">
             <Image
               src="/images/fashion_img_1.png"
               alt="Spring fashion collection item"
-              width={800}
-              height={600}
+              fill
               priority={true}
-              quality={80}
-              className="w-full h-full object-cover"
-              loading="eager"
-              sizes="50vw"
+              quality={85}
+              className="object-cover"
+              sizes="(max-width: 640px) 50vw, (max-width: 768px) 50vw, (max-width: 1024px) 50vw, 50vw"
             />
           </div>
         </div>
