@@ -11,7 +11,7 @@ Note: This project is currently under active development and is not yet complete
 
 ## Overview
 
-Ako & Co is a fashion e-commerce website offering a curated selection of high-quality clothing for men, women, and kids. This platform provides a seamless shopping experience with features like product browsing, cart functionality, user authentication, and secure checkout.
+Ako & Co is a fashion e-commerce website offering a curated selection of high-quality clothing for women. This platform provides a seamless shopping experience with features like product browsing, cart functionality, user authentication, and secure checkout.
 
 ## Tech Stack
 
