@@ -1,11 +1,7 @@
 ## Ako & Co E-commerce
 
 <div align="left" style="display: flex; align-items: flex-start;">
-  <img src="public/images/akostore_img_1.png" alt="Home page" width="300" />
-   
-  <img src="public/images/akostore_img_2.png" alt="Product details view" width="450" style="vertical-align: top;" />
-   <img src="public/images/order_img.png" alt="Home page" width="300" />
-   <img src="public/images/chart_img.png" alt="Home page" width="300" />
+  <img src="public/images/ako_img.png" alt="Home page" " />
 
 </div>
 
